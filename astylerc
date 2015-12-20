@@ -1,0 +1,17 @@
+# This file is meant to be used with the astyle package, whose homepage
+# is found at http://astyle.sourceforge.net. Combining these options with
+# astyle ensures that anything you contribute matches the style guidelines
+# of the project. This file is here for developer convenience.
+#
+# For short, use -A2TpHUjSxek3W3
+
+style=attach
+indent=force-tab=4
+pad-oper
+pad-header
+unpad-paren
+add-brackets
+indent-switches
+delete-empty-lines
+align-pointer=name
+align-reference=name

@@ -4,5 +4,8 @@
 !*.c
 !*.h
 !.gitignore
+!astylerc
 !README.mdown
+!CONTRIBUTING.mdown
+!AUTHORS
 !LICENSE

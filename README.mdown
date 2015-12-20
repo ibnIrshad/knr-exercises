@@ -1,20 +1,24 @@
-These files are my solutions to Kernighan and Ritchie's *The C Programming
-Language, 2nd Edition*. The aim is to deepen my understanding of C, using only
-the concepts covered in content that comes before each exercise. That means
-no "cheating" by using standard library features that aren't covered in the
-book yet. According to [`comp.lang.c`][clc], this is known as *Category-0
-compliant*. As a result, many of my solutions will probably not be "the best",
-but suitable for the goal at hand: *learning*.
+These files are solutions to Kernighan and Ritchie's *The C Programming
+Language, 2nd Edition*. The aim of this project is to help deepen one's
+understanding of C, using only the concepts covered in content that comes before
+each exercise. That means no "cheating" by using standard library features that
+aren't covered in the book yet. According to [`comp.lang.c`][clc], this is known
+as *Category-0 compliant*. As a result, many of the solutions will probably not
+be "the best", but suitable for the goal at hand: *learning*.
 
-I chose this route because as I read through the K&R, I didn't feel like I
-was learning anything new. C is known for its simplicity and efficiency, so
-I thought, "If I'm not learning anything about efficiency and simplifying
-my programs, then why am I learning C?" I tackled a few exercises and found
-that I was beginning to learn a few things I hadn't ran into before, and this
-repository was born.
+This project was started to help bring out the value of the K&R. Just reading
+the text isn't enough; to best learn with the K&R, the exercises are valuable
+experience that keeps things interesting as one progresses through the book.
 
-Critique is welcome, but please keep in mind the limitations I've outlined in
-the first paragraph. Some incomplete implementations are noted, which I intend
-on revisiting or annotating. Any questions, suggestions, and advice are welcome.
+Constructive critique is welcome, but please keep in mind the scope and goals of
+this project. Some incomplete implementations are noted. Pull requests, patches,
+questions, and advice are welcome.
+
+This project is licensed under the GNU General Public License version 3 and is
+copywritten by the individuals in the AUTHORS file. For more information, please
+read the LICENSE file that accompanies this project. To keep things simple,
+contributions should be licensed under the same license to ensure the project
+retains its enforcement of software freedoms. If the GPL 3 is unsatisfactory for
+you, please do not submit pull requests or patches.
 
 [clc]: http://clc-wiki.net/wiki/K%26R2_solutions:Ancillary:Category_numbers

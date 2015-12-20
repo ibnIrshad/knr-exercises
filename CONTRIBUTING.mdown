@@ -1,0 +1,122 @@
+Before contributing to this project, please read the following suggestions.
+They'll make life easier for everyone. This file is somewhat of a work in
+progress. Don't hesitate to ask about a situation that's not covered here: it 
+may lead to a more thorough document.
+
+# Commit Messages
+
+* Must be wrapped to 72 characters or less
+* First line should indicate *what* was changed, in the present tense, e.g.
+  "Fix off-by-one error in foobar.c"
+* Reference GitHub Issue numbers where relevant, e.g. "Fixes issue #35". If you
+  want brownie points, include the URL to the issue so those who pull from a
+  source other than GitHub can follow the conversation.
+
+# Acknowledgement
+
+If you wish to be acknowledged for your contributions, add your name (if it
+isn't already present) to the AUTHORS file before commiting your changes so pull
+requests already include the relevant information. The format should be:
+
+    Firstname Lastname or Pseudonym <email-address> @github-username
+        Brief summary of contributions, indented by four spaces.
+
+At least one of the four identifiers must be used, preferably whatever matches
+your `.gitconfig` user information.
+
+Keep in mind that this project is also licensed under the GPL version 3. The 
+terms of the license can be found in the LICENSE file. Please do not contribute 
+to this project if the GPL 3 is not a satisfactory license for you. While some 
+licenses may be compatible with the GPL, licensing individual files with 
+different licenses between authors very quickly becomes a mess and would 
+diminish the value of this project.
+
+# Categories
+
+There are [three categories][clc-cats] of solutions to K&R exercises. This
+project aims for Category-0 (zero) compliance, which means that only concepts
+that have been covered *up to* the current exercise can be used, and the code
+must adhere to the ANSI/ISO C89 standard.
+
+# Code Style
+
+* `snake_case` preferred. Shortened names are acceptable, e.g. `vectsize` in lieu
+  of `get_vector_size`
+* K&R (AKA 1TBS) indenting should be used. Opening braces are not permitted to
+  be on their own line.
+* Tabs are four spaces wide and are exclusively used for indenting
+* Spaces may be used to align on `:` or `=`; never indentation
+* Names not meant to be used directly should be preceded by an underscore
+* Constants should be in `ALL_CAPS`; shortened names still okay
+* Operators must have exactly one (1) space on both sides, e.g. `1 + 1` instead
+  of `1+1`. One exception is pointers; the `*` symbol must be directly before
+  the beginning of the variable or function name, e.g. `char *buffer;`
+* If `;` or `,` are used in a multi-statement line, they must be followed by one
+  space, e.g. `for (foo = 0; foo < bar; foo++) {`
+* Empty lines are not allowed inside blocks (and thus functions, including
+  `main()`)
+
+You can use the [astyle][astyle-home] package to run code through to ensure it
+meets style guidelines. You'll need to run it like so:
+
+    astyle -A2TpHUjSxek3W3 [filename]
+
+There is an `astylerc` file included in the repository for convenience.
+
+## Variable Names
+
+Try to use short, but descriptive variables for data that will be used
+in a non-trivial way, i.e. not used as a one-off in a loop. In general,
+shorthand variables `i`, `j`, and `k` are used for various loop levels, `c` for
+characters, `s` for quick-and-dirty strings. Such shorthand names should only be
+used when the name isn't very important. For example:
+
+    int strlen(char *s) {
+        int i;
+        for (i = 0; s[i] != '\0'; i++) {
+            /* do stuff */
+        }
+        return i;
+    }
+
+In the above, it'd be pointless for `s` to be something like `input_string`
+because we know based on the function name and the type of `s` that we're
+dealing with a simple C string and we're just getting its length. `i` could be
+renamed to `length` and be more semantic, but in this case it'd be expanding
+for little gain. To sum up, use your best judgment. If there's any chance for
+ambiguity, use a better name.
+
+(Note: At the time of writing, the original author has some cleaning up to do, 
+too :P)
+
+## Function Names
+
+Much like variables, aim for something short, but descriptive. A lot of what's
+in the K&R is given to you, so wherever possible, solutions should make use of
+functions already made available in the text, or minor alterations thereof.
+
+## Comments
+
+C has two commenting syntaxes. Most projects prefer one or the other. Both
+syntaxes are generally okay; however, since Category-0 solutions adhere to the
+C89/C90 standard, only multi-line comments (`/* like this */`) should be used.
+
+At the time of writing, this is in need of correction and is already in an
+issue on GitHub.
+
+Comment use in code should be minimal; if a comment is reiterating what's
+already there, it's a bad comment. Comments should discuss *what* is going on if
+it's not obvious, and/or *why* you're doing it. The following is pretty useless:
+
+    int i; /* Array index */
+
+But this can be useful for someone trying to follow along and learn:
+
+    /* Subtract one from the string's length to account for the NUL terminator.
+     * This ensures that the correct length for actual string content is
+     * reported.
+     */
+    return (len - 1);
+
+[clc-cats]: http://clc-wiki.net/wiki/K%26R2_solutions:Ancillary:Category_numbers
+[astyle-home]: http://astyle.sourceforge.net
